@@ -8,7 +8,7 @@ install:
 before_script:
   - node --version
   - npm --version
-  - AppData/Roaming/npm/newman --version
+  - Users/mpetk/AppData/Roaming/npmnewman --version
 
 script:
   - node_modules/.bin/newman run AllScripts_PoC.postman_collection(10).json --folder Tests -e tests/tests.postman_environment.jso
