@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3ba9571b-4b41-47ba-bf74-4648491db97c",
+		"_postman_id": "32d815ee-42b8-41f9-80a8-eaf3d2bdc360",
 		"name": "AllScripts_PoC",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -98,8 +98,8 @@
 									"pm.test(\"First appointment has Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
 									"pm.test(\"First appointment has PatientId\", function() { pm.expect(data[0]).to.have.property('PatientId');});",
 									"pm.test(\"First appointment has PatientName\", function() { pm.expect(data[0]).to.have.property('PatientName');});",
-									"pm.test(\"First appointment has StartTime\", function() { pm.expect(data[0]).to.have.property('StartTime');});",
-									"pm.test(\"First appointment has EndTime\", function() { pm.expect(data[0]).to.have.property('EndTime');});",
+									"pm.test(\"First appointment has Start\", function() { pm.expect(data[0]).to.have.property('Start');});",
+									"pm.test(\"First appointment has End\", function() { pm.expect(data[0]).to.have.property('End');});",
 									"pm.test(\"First appointment has OwnerId\", function() { pm.expect(data[0]).to.have.property('OwnerId');});",
 									"pm.test(\"First appointment has OwnerName\", function() { pm.expect(data[0]).to.have.property('OwnerName');});",
 									"pm.test(\"First appointment has CreatorId\", function() { pm.expect(data[0]).to.have.property('CreatorId');});"
@@ -596,7 +596,7 @@
 									" }",
 									" ",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].StartTime);",
+									"var ResponceStartdate = new Date (data[0].Start);",
 									"",
 									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});"
 								]
@@ -668,7 +668,7 @@
 									" }",
 									" ",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].EndTime);",
+									"var ResponceEnddate = new Date (data[0].End);",
 									"",
 									"pm.test(\"End time is before To date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});"
 								]
@@ -740,9 +740,9 @@
 									" }",
 									" ",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].StartTime);",
+									"var ResponceStartdate = new Date (data[0].Start);",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].EndTime);",
+									"var ResponceEnddate = new Date (data[0].End);",
 									"",
 									"",
 									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
@@ -886,7 +886,7 @@
 									" }",
 									"",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].StartTime);",
+									"var ResponceStartdate = new Date (data[0].Start);",
 									"",
 									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
 									"pm.test(\"Doctor is correct\", function() { pm.expect(data[0]).to.have.property('OwnerId').equal(JSON.parse(globals.DoctorID))});"
@@ -961,7 +961,7 @@
 									" }",
 									"",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].EndTime);",
+									"var ResponceEnddate = new Date (data[0].End);",
 									"",
 									"pm.test(\"End time is before To date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});",
 									"pm.test(\"Doctor is correct\", function() { pm.expect(data[0]).to.have.property('OwnerId').equal(JSON.parse(globals.DoctorID))});"
@@ -1035,9 +1035,9 @@
 									" }",
 									" ",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].StartTime);",
+									"var ResponceStartdate = new Date (data[0].Start);",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].EndTime);",
+									"var ResponceEnddate = new Date (data[0].End);",
 									"",
 									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
 									"pm.test(\"End time is before To date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});",
@@ -1184,7 +1184,7 @@
 									" }",
 									"",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].StartTime);",
+									"var ResponceStartdate = new Date (data[0].Start);",
 									"",
 									"",
 									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
@@ -1261,7 +1261,7 @@
 									" }",
 									" ",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].EndTime);",
+									"var ResponceEnddate = new Date (data[0].End);",
 									"",
 									"",
 									"pm.test(\"End time is before To date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});",
@@ -1337,9 +1337,9 @@
 									" }",
 									" ",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].StartTime);",
+									"var ResponceStartdate = new Date (data[0].Start);",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].EndTime);",
+									"var ResponceEnddate = new Date (data[0].End);",
 									"",
 									"",
 									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
@@ -1411,7 +1411,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientDataId\", AppData.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentDataStartTime\", AppData.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentDataStart\", AppData.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerDataId\", AppData.OwnerId);",
 									"",
@@ -1419,21 +1419,21 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"var startTime = moment('2019-01-01T21:35:43.527Z').toISOString();",
-									"var endTime = moment(startTime).add(30, 'minute').toISOString();",
+									"var Start = moment('2019-01-01T21:35:43.527Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString();",
 									"",
-									"console.info(startTime);",
+									"console.info(Start);",
 									"",
 									"pm.test(\"Has Id\", function() { pm.expect(AppData).to.have.property('Id');});",
 									"pm.test(\"Has PatientId\", function() { pm.expect(AppData).to.have.property('PatientId');});",
 									"pm.test(\"Has PatientName\", function() { pm.expect(AppData).to.have.property('PatientName');});",
-									"pm.test(\"Has StartTime\", function() { pm.expect(AppData).to.have.property('StartTime');});",
-									"pm.test(\"Has EndTime\", function() { pm.expect(AppData).to.have.property('EndTime');});",
+									"pm.test(\"Has Start\", function() { pm.expect(AppData).to.have.property('Start');});",
+									"pm.test(\"Has End\", function() { pm.expect(AppData).to.have.property('End');});",
 									"pm.test(\"Has OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId');});",
 									"pm.test(\"Has OwnerName\", function() { pm.expect(AppData).to.have.property('OwnerName');});",
 									"pm.test(\"Has CreatorId\", function() { pm.expect(AppData).to.have.property('CreatorId');});",
-									"pm.test(\"Has correct Start time\", function () { pm.expect(AppData).to.have.property('StartTime' , startTime);});",
-									"pm.test(\"Has correct End time\", function () { pm.expect(AppData).to.have.property('EndTime' , endTime);});"
+									"pm.test(\"Has correct Start time\", function () { pm.expect(AppData).to.have.property('Start' , Start);});",
+									"pm.test(\"Has correct End time\", function () { pm.expect(AppData).to.have.property('End' , End);});"
 								]
 							}
 						},
@@ -1467,7 +1467,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"PatientId\": 1,\n\t\"StartTime\": \"2019-01-01T21:35:43.525Z\"\n}"
+							"raw": "{\n\t\"PatientId\": 1,\n\t\"Start\": \"2019-01-01T21:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -1508,12 +1508,12 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"var startTime = moment('2019-01-01T21:35:43.527Z').toISOString();",
-									"var endTime = moment(startTime).add(30, 'minute').toISOString();",
+									"var Start = moment('2019-01-01T21:35:43.527Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString();",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 1);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(AppData).to.have.property('StartTime', startTime);});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(AppData).to.have.property('EndTime', endTime);});"
+									"pm.test(\"Has correct Start\", function() { pm.expect(AppData).to.have.property('Start', Start);});",
+									"pm.test(\"Has correct End\", function() { pm.expect(AppData).to.have.property('End', End);});"
 								]
 							}
 						}
@@ -1563,7 +1563,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientDataId\", AppData.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentDataStartTime\", AppData.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentDataStart\", AppData.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerDataId\", AppData.OwnerId);",
 									"",
@@ -1581,8 +1581,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 2);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T07:35:43.525Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T08:35:43.525Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T07:35:43.525Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T08:35:43.525Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 140);});"
 								]
 							}
@@ -1620,7 +1620,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\" : 2,\n\t\"StartTime\": \"2019-01-01T07:35:43.525Z\",\n\t\"EndTime\": \"2019-01-01T08:35:43.525Z\",\n\t\"OwnerId\": 140\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentDataId}}\",\n  \"PatientId\" : 2,\n  \"Start\": \"2019-01-01T07:35:43.525Z\",\n  \"End\": \"2019-01-01T08:35:43.525Z\",\n  \"OwnerId\": 140\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -1660,8 +1660,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 2);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T07:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T08:35:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T07:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(data).to.have.property('End', '2019-01-01T08:35:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 140);});"
 								]
 							}
@@ -1712,7 +1712,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientDataId\", AppData.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentDataStartTime\", AppData.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentDataStart\", AppData.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerDataId\", AppData.OwnerId);",
 									"",
@@ -1730,8 +1730,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 3);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T09:35:43.525Z');});",
-									"pm.test(\"Has correct EndTimet\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T11:35:43.525Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T09:35:43.525Z');});",
+									"pm.test(\"Has correct Endt\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T11:35:43.525Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});",
 									""
 								]
@@ -1770,7 +1770,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\" : 3,\n\t\"StartTime\": \"2019-01-01T09:35:43.525Z\",\n\t\"EndTime\": \"2019-01-01T11:35:43.525Z\"\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentDataId}}\",\n  \"PatientId\" : 3,\n  \"Start\": \"2019-01-01T09:35:43.525Z\",\n  \"End\": \"2019-01-01T11:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -1810,8 +1810,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 3);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T07:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T08:35:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T07:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(data).to.have.property('End', '2019-01-01T08:35:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -1862,7 +1862,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientDataId\", AppData.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentDataStartTime\", AppData.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentDataStart\", AppData.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerDataId\", AppData.OwnerId);",
 									"",
@@ -1880,8 +1880,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 4);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -1916,7 +1916,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\" : 4,\n\t\"StartTime\": \"2019-01-01T13:35:43.525Z\"\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentDataId}}\",\n  \"PatientId\" : 4,\n  \"Start\": \"2019-01-01T13:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -1956,8 +1956,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 4);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2008,7 +2008,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientId\", data.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentStartTime\", data.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentStart\", data.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerId\", data.OwnerId);",
 									"",
@@ -2027,8 +2027,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 1);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-02T11:35:43.527Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-02T12:05:43.527Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-02T11:35:43.527Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-02T12:05:43.527Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2063,7 +2063,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"PatientId\": 1,\n  \"StartTime\": \"2019-01-02T11:35:43.525Z\"\n}"
+							"raw": "{\n  \"PatientId\": 1,\n  \"Start\": \"2019-01-02T11:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -2103,8 +2103,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data1).to.have.property('PatientId', 1);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data1).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2192,7 +2192,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\" : \"1\",\n\t\"StartTime\": \"2019-01-01T13:35:43.525Z\"\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 4,\n  \"Start\": \"2019-01-01T13:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -2247,7 +2247,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\": \"1\",\n  \"StartTime\": \"2019-01-02T11:35:43.525Z\",\n  \"OwnerId\": \"{{OwnerId}}\"\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\": \"1\",\n  \"Start\": \"2019-01-02T11:35:43.525Z\",\n  \"OwnerId\": \"{{OwnerId}}\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -2277,7 +2277,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientId\", data.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentStartTime\", data.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentStart\", data.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerId\", data.OwnerId);",
 									"",
@@ -2296,8 +2296,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 6);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T19:35:43.527Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T20:35:43.527Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T19:35:43.527Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T20:35:43.527Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2333,7 +2333,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"PatientId\" : 6,\n\t\"StartTime\": \"2019-01-01T19:35:43.525Z\",\n\t\"EndTime\": \"2019-01-01T20:35:43.525Z\"\n}"
+							"raw": "{\n\t\"PatientId\" : 6,\n\t\"Start\": \"2019-01-01T19:35:43.525Z\",\n\t\"End\": \"2019-01-01T20:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -2373,8 +2373,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 6);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2425,7 +2425,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientId\", data.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentStartTime\", data.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentStart\", data.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerId\", data.OwnerId);",
 									"",
@@ -2444,8 +2444,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 7);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T11:35:43.525Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T12:15:43.525Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T11:35:43.525Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T12:15:43.525Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
 								]
 							}
@@ -2483,7 +2483,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\" : 7,\n\t\"StartTime\": \"2019-01-01T11:35:43.525Z\",\n\t\"EndTime\": \"2019-01-01T12:15:43.525Z\",\n\t\"OwnerId\": 130\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 7,\n  \"Start\": \"2019-01-01T11:35:43.525Z\",\n  \"End\": \"2019-01-01T12:15:43.525Z\",\n  \"OwnerId\": 130\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -2523,8 +2523,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 7);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
 								]
 							}
@@ -2575,7 +2575,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientId\", data.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentStartTime\", data.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentStart\", data.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerId\", data.OwnerId);",
 									"",
@@ -2594,8 +2594,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 8);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T15:35:43.525Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T16:05:43.525Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T15:35:43.525Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T16:05:43.525Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2630,7 +2630,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\" : 8,\n\t\"StartTime\": \"2019-01-01T15:35:43.525Z\"\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 8,\n  \"Start\": \"2019-01-01T15:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -2670,8 +2670,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 8);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2722,7 +2722,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientId\", data.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentStartTime\", data.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentStart\", data.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerId\", data.OwnerId);",
 									"",
@@ -2740,8 +2740,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 9);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T17:35:43.525Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T18:35:43.525Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T17:35:43.525Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T18:35:43.525Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2779,7 +2779,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\" : 9,\n\t\"StartTime\": \"2019-01-01T17:35:43.525Z\",\n\t\"EndTime\": \"2019-01-01T18:35:43.525Z\"\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 9,\n  \"Start\": \"2019-01-01T17:35:43.525Z\",\n  \"End\": \"2019-01-01T18:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -2819,8 +2819,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 9);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2896,7 +2896,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\": \"9\",\n\t\"StartTime\": \"2019-01-01T17:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerId}}\"\n}"
+							"raw": "{\t\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\": \"9\",\n\t\"Start\": \"2019-01-01T17:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerId}}\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -2926,7 +2926,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientId\", data.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentStartTime\", data.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentStart\", data.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerId\", data.OwnerId);",
 									"",
@@ -2944,8 +2944,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 14);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T04:35:43.527Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T05:35:43.527Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T04:35:43.527Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T05:35:43.527Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 1);});"
 								]
 							}
@@ -2981,7 +2981,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"PatientId\" : 14,\n\t\"StartTime\": \"2019-01-01T04:35:43.525Z\",\n\t\"EndTime\": \"2019-01-01T05:35:43.525Z\",\n\t\"OwnerId\": 1\n}"
+							"raw": "{\n\t\"PatientId\" : 14,\n\t\"Start\": \"2019-01-01T04:35:43.525Z\",\n\t\"End\": \"2019-01-01T05:35:43.525Z\",\n\t\"OwnerId\": 1\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3021,8 +3021,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 14);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 1);});"
 								]
 							}
@@ -3073,7 +3073,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientId\", data.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentStartTime\", data.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentStart\", data.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerId\", data.OwnerId);",
 									"",
@@ -3091,8 +3091,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 15);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T12:35:43.525Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T13:05:43.525Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T12:35:43.525Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T13:05:43.525Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -3127,7 +3127,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\" : 15,\n\t\"StartTime\": \"2019-01-01T12:35:43.525Z\"\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 15,\n  \"Start\": \"2019-01-01T12:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3167,8 +3167,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 15);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -3219,7 +3219,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientId\", data.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentStartTime\", data.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentStart\", data.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerId\", data.OwnerId);",
 									"",
@@ -3237,8 +3237,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 16);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T15:35:43.525Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T17:35:43.525Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T15:35:43.525Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T17:35:43.525Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -3276,7 +3276,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\" : 16,\n\t\"StartTime\": \"2019-01-01T15:35:43.525Z\",\n\t\"EndTime\": \"2019-01-01T17:35:43.525Z\"\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 16,\n  \"Start\": \"2019-01-01T15:35:43.525Z\",\n  \"End\": \"2019-01-01T17:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3316,8 +3316,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 16);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -3368,7 +3368,7 @@
 									"",
 									"postman.setGlobalVariable(\"PatientId\", data.PatientId);",
 									"",
-									"postman.setGlobalVariable(\"AppointmentStartTime\", data.StartTime);",
+									"postman.setGlobalVariable(\"AppointmentStart\", data.Start);",
 									"",
 									"postman.setGlobalVariable(\"OwnerId\", data.OwnerId);",
 									"",
@@ -3386,8 +3386,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 17);});",
-									"pm.test(\"Has correct StartTime\", function() { pm.expect(data).to.have.property('StartTime', '2019-01-01T22:35:43.525Z');});",
-									"pm.test(\"Has correct EndTime\", function() { pm.expect(data).to.have.property('EndTime', '2019-01-01T23:15:43.525Z');});",
+									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T22:35:43.525Z');});",
+									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T23:15:43.525Z');});",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
 								]
 							}
@@ -3425,7 +3425,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\" : 17,\n\t\"StartTime\": \"2019-01-01T22:35:43.525Z\",\n\t\"EndTime\": \"2019-01-01T23:15:43.525Z\",\n\t\"OwnerId\": 130\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 17,\n  \"Start\": \"2019-01-01T22:35:43.525Z\",\n  \"End\": \"2019-01-01T23:15:43.525Z\",\n  \"OwnerId\": 130\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3465,8 +3465,8 @@
 									" }",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 17);});",
-									"//pm.test(\"StartTime is correct\", function() { pm.expect(AppData).to.have.property('StartTime', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"EndTime is correct\", function() { pm.expect(AppData).to.have.property('EndTime', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
 								]
 							}
@@ -3542,7 +3542,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\": \"17\",\n\t\"StartTime\": \"2019-01-01T22:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerId}}\"\n}"
+							"raw": "{\t\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\": \"17\",\n\t\"Start\": \"2019-01-01T22:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerId}}\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3563,7 +3563,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f8d06573-83ce-4b93-ab39-fb83a30a91d5",
+								"id": "3653e78f-cb30-432f-939e-5402f247e1fc",
 								"type": "text/javascript",
 								"exec": [
 									"var data1 = JSON.parse(responseBody);",
@@ -3611,7 +3611,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"PatientId\" : 14,\n\t\"StartTime\": \"{{AppointmentStartTime}}\",\n\t\"EndTime\": \"2019-01-01T05:35:43.525Z\",\n\t\"OwnerId\": 1\n}"
+							"raw": "{\n  \"PatientId\" : 14,\n  \"Start\": \"{{AppointmentStart}}\",\n  \"End\": \"2019-01-01T05:35:43.525Z\",\n  \"OwnerId\": 1\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3632,7 +3632,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "aa5d373d-7c78-4925-a489-441842eb6b4c",
+								"id": "7eca7321-520b-429e-9c35-eb8c4e9ba533",
 								"type": "text/javascript",
 								"exec": [
 									"var data1 = JSON.parse(responseBody);",
@@ -3682,7 +3682,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 16,\n  \"StartTime\": \"2019-01-01T17:35:43.525Z\",\n  \"EndTime\": \"2019-01-01T15:35:43.525Z\"\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 16,\n  \"Start\": \"2019-01-01T17:35:43.525Z\",\n  \"End\": \"2019-01-01T15:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3703,7 +3703,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "92b20061-4691-46cd-aa45-89c04c352c76",
+								"id": "02a58b0c-6592-417a-8b51-aa9c58cdb1ed",
 								"type": "text/javascript",
 								"exec": [
 									"var data1 = JSON.parse(responseBody);",
@@ -3753,7 +3753,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\" : 16,\n\t\"StartTime\": \"2019-01-01T15:35:43.525Z\",\n\t\"EndTime\": \"2019-01-01T15:35:43.525Z\"\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 16,\n  \"Start\": \"2019-01-01T15:35:43.525Z\",\n  \"End\": \"2019-01-01T15:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3821,7 +3821,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentId}}\",\n\t\"PatientId\" : 15,\n\t\"StartTime\": \"2018-05-05T12:35:43.525Z\"\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 15,\n  \"Start\": \"2018-05-05T12:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3892,7 +3892,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 17,\n  \"StartTime\": \"2019-01-01T22:35:43.525Z\",\n  \"EndTime\": \"2019-01-01T23:15:43.525Z\",\n  \"OwnerId\": -1\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 17,\n  \"Start\": \"2019-01-01T22:35:43.525Z\",\n  \"End\": \"2019-01-01T23:15:43.525Z\",\n  \"OwnerId\": -1\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3950,7 +3950,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\": \"{{PatientDataId}}\",\n\t\"StartTime\": \"{{AppointmentStartTime}}\",\n\t\"OwnerId\": -1\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentDataId}}\",\n  \"PatientId\": \"{{PatientDataId}}\",\n  \"Start\": \"{{AppointmentStart}}\",\n  \"OwnerId\": -1\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4009,7 +4009,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": -1,\n\t\"PatientId\": \"{{PatientDataId}}\",\n\t\"StartTime\": \"{{AppointmentStartTime}}\",\n\t\"OwnerId\": \"{{OwnerDataId}}\"\n}"
+							"raw": "{  \n  \"Id\": -1,\n  \"PatientId\": \"{{PatientDataId}}\",\n  \"Start\": \"{{AppointmentStart}}\",\n  \"OwnerId\": \"{{OwnerDataId}}\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4070,7 +4070,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\": -1,\n\t\"StartTime\": \"{{AppointmentStartTime}}\",\n\t\"OwnerId\": \"{{OwnerDataId}}\"\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentDataId}}\",\n  \"PatientId\": -1,\n  \"Start\": \"{{AppointmentStart}}\",\n  \"OwnerId\": \"{{OwnerDataId}}\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4125,7 +4125,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\": \"{{PatientDataId}}\",\n\t\"StartTime\": \"2019-01-01T13:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerDataId}}\"\n}"
+							"raw": "{\t\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\": \"{{PatientDataId}}\",\n\t\"Start\": \"2019-01-01T13:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerDataId}}\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4194,7 +4194,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"PatientId\": 1,\n\t\"StartTime\": \"2019-01-03T21:35:43.525Z\"\n}"
+							"raw": "{\n  \"PatientId\": 1,\n  \"Start\": \"2019-01-03T21:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4266,7 +4266,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\" : 2,\n\t\"StartTime\": \"2019-01-03T07:35:43.525Z\",\n\t\"EndTime\": \"2019-01-03T08:35:43.525Z\",\n\t\"OwnerId\": 140\n}"
+							"raw": "{\n  \"Id\": \"{{AppointmentDataId}}\",\n  \"PatientId\" : 2,\n  \"Start\": \"2019-01-03T07:35:43.525Z\",\n  \"End\": \"2019-01-03T08:35:43.525Z\",\n  \"OwnerId\": 140\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4385,7 +4385,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\": \"{{PatientDataId}}\",\n\t\"StartTime\": \"2019-01-03T13:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerDataId}}\"\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentDataId}}\",\n  \"PatientId\": \"{{PatientDataId}}\",\n  \"Start\": \"2019-01-03T13:35:43.525Z\",\n  \"OwnerId\": \"{{OwnerDataId}}\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4622,7 +4622,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"PatientId\": 1,\n\t\"StartTime\": \"2019-01-03T21:35:43.525Z\"\n}"
+							"raw": "{\n\t\"PatientId\": 1,\n\t\"Start\": \"2019-01-03T21:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4685,7 +4685,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\" : 2,\n\t\"StartTime\": \"2019-01-03T07:35:43.525Z\",\n\t\"EndTime\": \"2019-01-03T08:35:43.525Z\",\n\t\"OwnerId\": 140\n}"
+							"raw": "{\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\" : 2,\n\t\"Start\": \"2019-01-03T07:35:43.525Z\",\n\t\"End\": \"2019-01-03T08:35:43.525Z\",\n\t\"OwnerId\": 140\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4786,7 +4786,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\": \"{{PatientDataId}}\",\n\t\"StartTime\": \"2019-01-03T13:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerDataId}}\"\n}"
+							"raw": "{\t\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\": \"{{PatientDataId}}\",\n\t\"Start\": \"2019-01-03T13:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerDataId}}\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -5021,7 +5021,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"FirstName\" : \"Test\",\n\t\"LastName\": \"Testov\",\n\t\"Email\": \"testmail{{uniqueID}}@mytestemail.com\",\n\t\"Address\": {\n\t\t\"Country\": \"USA\",\n\t\t\"City\": \"Los Angeles\",\n\t\t\"Street\": \"Test Street 123\"\n\t}\n}"
+					"raw": "{\n  \"FirstName\" : \"Test\",\n  \"LastName\": \"Testov\",\n  \"Email\": \"testmail{{uniqueID}}@mytestemail.com\",\n  \"Address\": {\n    \"Country\": \"USA\",\n    \"City\": \"Los Angeles\",\n    \"Street\": \"Test Street 123\"\n  }\n}"
 				},
 				"url": {
 					"raw": "{{url}}/api/patients",
