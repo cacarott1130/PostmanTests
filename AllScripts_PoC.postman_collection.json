@@ -76,7 +76,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c01faed5-26e1-4913-b480-55338cac7157",
+								"id": "96dcfcbc-6d0b-41ac-9936-d6acd97804ca",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
@@ -95,14 +95,14 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									" ",
-									"pm.test(\"First appointment has Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
-									"pm.test(\"First appointment has PatientId\", function() { pm.expect(data[0]).to.have.property('PatientId');});",
-									"pm.test(\"First appointment has PatientName\", function() { pm.expect(data[0]).to.have.property('PatientName');});",
-									"pm.test(\"First appointment has Start\", function() { pm.expect(data[0]).to.have.property('Start');});",
-									"pm.test(\"First appointment has End\", function() { pm.expect(data[0]).to.have.property('End');});",
-									"pm.test(\"First appointment has OwnerId\", function() { pm.expect(data[0]).to.have.property('OwnerId');});",
-									"pm.test(\"First appointment has OwnerName\", function() { pm.expect(data[0]).to.have.property('OwnerName');});",
-									"pm.test(\"First appointment has CreatorId\", function() { pm.expect(data[0]).to.have.property('CreatorId');});"
+									"pm.test(\"First appointment from the response has property Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
+									"pm.test(\"First appointment from the response has property PatientId\", function() { pm.expect(data[0]).to.have.property('PatientId');});",
+									"pm.test(\"First appointment from the response has property PatientName\", function() { pm.expect(data[0]).to.have.property('PatientName');});",
+									"pm.test(\"First appointment from the response has property Start\", function() { pm.expect(data[0]).to.have.property('Start');});",
+									"pm.test(\"First appointment from the response has property End\", function() { pm.expect(data[0]).to.have.property('End');});",
+									"pm.test(\"First appointment from the response has property OwnerId\", function() { pm.expect(data[0]).to.have.property('OwnerId');});",
+									"pm.test(\"First appointment from the response has property OwnerName\", function() { pm.expect(data[0]).to.have.property('OwnerName');});",
+									"pm.test(\"First appointment from the response has property CreatorId\", function() { pm.expect(data[0]).to.have.property('CreatorId');});"
 								]
 							}
 						}
@@ -142,7 +142,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3b496db9-2012-4ae6-96a5-23b2d5cde922",
+								"id": "c9fa1552-c15f-4442-b45c-4c1bd152f44e",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
@@ -160,13 +160,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									" ",
-									"pm.test(\"First patient has Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
-									"pm.test(\"First patient has FirstName\", function() { pm.expect(data[0]).to.have.property('FirstName');});",
-									"pm.test(\"First patient has LastName\", function() { pm.expect(data[0]).to.have.property('LastName');});",
-									"pm.test(\"First patient has Email\", function() { pm.expect(data[0]).to.have.property('Email');});",
-									"pm.test(\"First patient has Country\", function() { pm.expect(data[0].Address).to.have.property('Country');});",
-									"pm.test(\"First patient has City\", function() { pm.expect(data[0].Address).to.have.property('City');});",
-									"pm.test(\"First patient has Street\", function() { pm.expect(data[0].Address).to.have.property('Street');});"
+									"pm.test(\"First patient from the response has property Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
+									"pm.test(\"First patient from the response has property FirstName\", function() { pm.expect(data[0]).to.have.property('FirstName');});",
+									"pm.test(\"First patient from the response has property LastName\", function() { pm.expect(data[0]).to.have.property('LastName');});",
+									"pm.test(\"First patient from the response has property Email\", function() { pm.expect(data[0]).to.have.property('Email');});",
+									"pm.test(\"First patient from the response has property Country\", function() { pm.expect(data[0].Address).to.have.property('Country');});",
+									"pm.test(\"First patient from the response has property City\", function() { pm.expect(data[0].Address).to.have.property('City');});",
+									"pm.test(\"First patient from the response has property Street\", function() { pm.expect(data[0].Address).to.have.property('Street');});"
 								]
 							}
 						}
@@ -206,7 +206,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e466c9d4-512d-4296-98cf-f1235a08e0db",
+								"id": "91da97a7-7340-4774-8b92-cd98ca5e74fe",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
@@ -224,13 +224,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct Id\", function() { pm.expect(data).to.have.property('Id' , 5);});",
-									"pm.test(\"Has correct FirstName\", function() { pm.expect(data).to.have.property('FirstName' , 'Lanora');});",
-									"pm.test(\"Has correct LastName\", function() { pm.expect(data).to.have.property('LastName' , 'Zell');});",
-									"pm.test(\"Has correct Email\", function() { pm.expect(data).to.have.property('Email' , 'lenora_zell@gmail.com');});",
-									"pm.test(\"Has correct Country\", function() { pm.expect(data.Address).to.have.property('Country' , 'USA');});",
-									"pm.test(\"Has correct City\", function() { pm.expect(data.Address).to.have.property('City' , 'Dallas');});",
-									"pm.test(\"Has correct Street\", function() { pm.expect(data.Address).to.have.property('Street' , 'Random Street Address Here');});"
+									"pm.test(\"Has correct property Id\", function() { pm.expect(data).to.have.property('Id' , 5);});",
+									"pm.test(\"Has correct property FirstName\", function() { pm.expect(data).to.have.property('FirstName' , 'Lanora');});",
+									"pm.test(\"Has correct property LastName\", function() { pm.expect(data).to.have.property('LastName' , 'Zell');});",
+									"pm.test(\"Has correct property Email\", function() { pm.expect(data).to.have.property('Email' , 'lenora_zell@gmail.com');});",
+									"pm.test(\"Has correct property Country\", function() { pm.expect(data.Address).to.have.property('Country' , 'USA');});",
+									"pm.test(\"Has correct property City\", function() { pm.expect(data.Address).to.have.property('City' , 'Dallas');});",
+									"pm.test(\"Has correct property Street\", function() { pm.expect(data.Address).to.have.property('Street' , 'Random Street Address Here');});"
 								]
 							}
 						}
@@ -271,12 +271,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "75924da0-960e-4ad0-8ad2-d8d08a560e35",
+								"id": "ccda74c8-5490-4354-86be-3485e152340d",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
-									"",
-									"//console.info(data[0].Id);",
 									"",
 									"postman.setGlobalVariable(\"DoctorID\", data[0].Id);",
 									"",
@@ -293,9 +291,9 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									" ",
-									"pm.test(\"First doctor has Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
-									"pm.test(\"First doctor has Name\", function() { pm.expect(data[0]).to.have.property('Name');});",
-									"pm.test(\"First doctor has Roles\", function() { pm.expect(data[0]).to.have.property('Roles');});",
+									"pm.test(\"First doctor from the response has property Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
+									"pm.test(\"First doctor from the response has property Name\", function() { pm.expect(data[0]).to.have.property('Name');});",
+									"pm.test(\"First doctor from the response has property Roles\", function() { pm.expect(data[0]).to.have.property('Roles');});",
 									"",
 									"var allUserAreDoctors = true; ",
 									"for (var y in data) {",
@@ -309,7 +307,7 @@
 									"        allUserAreDoctors = false}",
 									"} ",
 									"",
-									"pm.test(\"All Users are Doctors\",userIsDoctor(allUserAreDoctors));",
+									"pm.test(\"All Users are Doctors\", userIsDoctor(allUserAreDoctors));",
 									"function userIsDoctor(isDoctor){pm.expect(isDoctor).to.be.true;}"
 								]
 							}
@@ -356,12 +354,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9ed917e5-7359-4c04-af7e-29924a5178ec",
+								"id": "1189dba5-238b-47a0-9de0-0d99b3987e83",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
-									"",
-									"//console.info(data[0].Id);",
 									"",
 									"postman.setGlobalVariable(\"DoctorID\", data[0].Id);",
 									"",
@@ -378,9 +374,9 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									" ",
-									"pm.test(\"First officemanager has Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
-									"pm.test(\"First officemanager has Name\", function() { pm.expect(data[0]).to.have.property('Name');});",
-									"pm.test(\"First officemanager has Roles\", function() { pm.expect(data[0]).to.have.property('Roles');});",
+									"pm.test(\"First officemanager from the response has property Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
+									"pm.test(\"First officemanager from the response has property Name\", function() { pm.expect(data[0]).to.have.property('Name');});",
+									"pm.test(\"First officemanager from the response has property Roles\", function() { pm.expect(data[0]).to.have.property('Roles');});",
 									" ",
 									"var allUserAreOfficeManagers = true; ",
 									"for (var y in data) {",
@@ -441,12 +437,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5e014fa8-1ee0-4dbd-a714-59b27ea90b96",
+								"id": "56782b8a-ee4b-49aa-801d-4924144fae16",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
-									"",
-									"//console.info(data[0].Id);",
 									"",
 									"postman.setGlobalVariable(\"DoctorID\", data[0].Id);",
 									"",
@@ -463,11 +457,11 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"First doctor/officemanager has Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
-									"pm.test(\"First doctor/officemanager has Name\", function() { pm.expect(data[0]).to.have.property('Name');});",
-									"pm.test(\"First doctor/officemanager has Roles\", function() { pm.expect(data[0]).to.have.property('Roles');});",
-									"pm.test(\"Doctor available in response\", function () { pm.expect(pm.response.text()).to.include(\"Neiko10 Neikov10\");});",
-									"pm.test(\"OfficeManager available in response\", function () { pm.expect(pm.response.text()).to.include(\"John10 Lennon10\");});"
+									"pm.test(\"First doctor/officemanager from the response has property Id\", function() { pm.expect(data[0]).to.have.property('Id');});",
+									"pm.test(\"First doctor/officemanager from the response has property Name\", function() { pm.expect(data[0]).to.have.property('Name');});",
+									"pm.test(\"First doctor/officemanager from the response has property Roles\", function() { pm.expect(data[0]).to.have.property('Roles');});",
+									"pm.test(\"Doctor is available in response\", function () { pm.expect(pm.response.text()).to.include(\"Neiko10 Neikov10\");});",
+									"pm.test(\"OfficeManager is available in response\", function () { pm.expect(pm.response.text()).to.include(\"John10 Lennon10\");});"
 								]
 							}
 						}
@@ -513,7 +507,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cbc46ca5-3a08-46f3-a73d-95cdb71d1291",
+								"id": "4d18bf9b-119d-42f1-bbe8-31e4883a6d81",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
@@ -531,10 +525,10 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									" ",
-									"pm.test(\"Scanned document has property Id\", function() { pm.expect(data).to.have.property('Id');});",
-									"pm.test(\"Scanned document has property Name\", function() { pm.expect(data).to.have.property('Name');});",
-									"pm.test(\"Scanned document has property Description\", function() { pm.expect(data).to.have.property('Description');});",
-									"pm.test(\"Scanned document has property ContentBase64\", function() { pm.expect(data).to.have.property('ContentBase64');});"
+									"pm.test(\"Scanned document has property Id in the response\", function() { pm.expect(data).to.have.property('Id');});",
+									"pm.test(\"Scanned document has property Name in the response\", function() { pm.expect(data).to.have.property('Name');});",
+									"pm.test(\"Scanned document has property Description in the response\", function() { pm.expect(data).to.have.property('Description');});",
+									"pm.test(\"Scanned document has property ContentBase64 in the response\", function() { pm.expect(data).to.have.property('ContentBase64');});"
 								]
 							}
 						}
@@ -575,7 +569,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c78fe18a-eec9-4668-8eb4-b6ad6768a50c",
+								"id": "14d5285c-3eab-4985-9385-7cfe6b513b21",
 								"type": "text/javascript",
 								"exec": [
 									"var moment = require('moment');",
@@ -596,9 +590,9 @@
 									" }",
 									" ",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].Start);",
+									"var ResponseStartdate = new Date (data[0].Start);",
 									"",
-									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});"
+									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponseStartdate).to.be.above(Startdate);});"
 								]
 							}
 						}
@@ -647,7 +641,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "190948db-561d-4227-bc69-ec4b33d2b99c",
+								"id": "4d050d17-cc91-43ca-a3bb-a6805206c827",
 								"type": "text/javascript",
 								"exec": [
 									"var moment = require('moment');",
@@ -668,9 +662,9 @@
 									" }",
 									" ",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].End);",
+									"var ResponseEnddate = new Date (data[0].End);",
 									"",
-									"pm.test(\"End time is before To date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});"
+									"pm.test(\"End time is before To date\", function () {pm.expect(ResponseEnddate).to.be.below(Enddate);});"
 								]
 							}
 						}
@@ -719,7 +713,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d1922e9a-660b-4c61-8db3-16dc3a6a046b",
+								"id": "7f52bae0-7ff1-4cca-bcb0-e9491b4c048b",
 								"type": "text/javascript",
 								"exec": [
 									"var moment = require('moment');",
@@ -740,13 +734,13 @@
 									" }",
 									" ",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].Start);",
+									"var ResponseStartdate = new Date (data[0].Start);",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].End);",
+									"var ResponseEnddate = new Date (data[0].End);",
 									"",
 									"",
-									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
-									"pm.test(\"End time is before From date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});"
+									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponseStartdate).to.be.above(Startdate);});",
+									"pm.test(\"End time is before From date\", function () {pm.expect(ResponseEnddate).to.be.below(Enddate);});"
 								]
 							}
 						}
@@ -799,7 +793,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8607b77b-35d0-4fd5-ae20-358f60083ddc",
+								"id": "b411a6b8-2167-4592-a550-c321b96ed17b",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
@@ -818,7 +812,7 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									" ",
-									"pm.test(\"Doctor is correct\", function() { pm.expect(data[0]).to.have.property('OwnerId').equal(JSON.parse(globals.DoctorID))});"
+									"pm.test(\"Doctor in the response is correct\", function() { pm.expect(data[0]).to.have.property('OwnerId').equal(JSON.parse(globals.DoctorID))});"
 								]
 							}
 						}
@@ -864,7 +858,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "83697aea-146d-4d24-b63b-d52bc70ad9bb",
+								"id": "7d3ac23f-965f-4b64-9eea-2f9acac6b6a1",
 								"type": "text/javascript",
 								"exec": [
 									"var moment = require('moment');",
@@ -886,9 +880,9 @@
 									" }",
 									"",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].Start);",
+									"var ResponseStartdate = new Date (data[0].Start);",
 									"",
-									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
+									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponseStartdate).to.be.above(Startdate);});",
 									"pm.test(\"Doctor is correct\", function() { pm.expect(data[0]).to.have.property('OwnerId').equal(JSON.parse(globals.DoctorID))});"
 								]
 							}
@@ -939,7 +933,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8d6d9d0b-d4cd-4ed9-a45c-deb0a6b022f0",
+								"id": "847c68aa-c6ec-4c94-b557-a39d437edbcf",
 								"type": "text/javascript",
 								"exec": [
 									"var moment = require('moment');",
@@ -961,9 +955,9 @@
 									" }",
 									"",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].End);",
+									"var ResponseEnddate = new Date (data[0].End);",
 									"",
-									"pm.test(\"End time is before To date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});",
+									"pm.test(\"End time is before To date\", function () {pm.expect(ResponseEnddate).to.be.below(Enddate);});",
 									"pm.test(\"Doctor is correct\", function() { pm.expect(data[0]).to.have.property('OwnerId').equal(JSON.parse(globals.DoctorID))});"
 								]
 							}
@@ -1014,7 +1008,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "96549213-d57b-4c14-902d-b1ad7cfd1698",
+								"id": "31978139-476a-4162-a495-10605846744c",
 								"type": "text/javascript",
 								"exec": [
 									"var moment = require('moment');",
@@ -1035,12 +1029,12 @@
 									" }",
 									" ",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].Start);",
+									"var ResponseStartdate = new Date (data[0].Start);",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].End);",
+									"var ResponseEnddate = new Date (data[0].End);",
 									"",
-									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
-									"pm.test(\"End time is before To date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});",
+									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponseStartdate).to.be.above(Startdate);});",
+									"pm.test(\"End time is before To date\", function () {pm.expect(ResponseEnddate).to.be.below(Enddate);});",
 									"pm.test(\"Doctor is correct\", function() { pm.expect(data[0]).to.have.property('OwnerId').equal(JSON.parse(globals.DoctorID))});"
 								]
 							}
@@ -1095,7 +1089,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b733101f-a072-4f24-ba85-d71164110fc0",
+								"id": "db820a58-2efa-417b-be3c-6ecfc6e06c94",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
@@ -1115,8 +1109,7 @@
 									" }",
 									" ",
 									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Aleksis Sideris\");}); // This needs to be changed ",
-									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed ",
-									""
+									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed "
 								]
 							}
 						}
@@ -1162,13 +1155,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d2659d93-f54d-4444-8e96-06354cf8e9ce",
+								"id": "73860b55-31e5-432d-a488-cd81977c40bf",
 								"type": "text/javascript",
 								"exec": [
-									"var moment = require('moment');",
-									"",
 									"var data = JSON.parse(responseBody);",
 									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -1184,10 +1176,10 @@
 									" }",
 									"",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].Start);",
+									"var ResponseStartdate = new Date (data[0].Start);",
 									"",
 									"",
-									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
+									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponseStartdate).to.be.above(Startdate);});",
 									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Aleksis Sideris\");}); // This needs to be changed ",
 									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed "
 								]
@@ -1239,13 +1231,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4d94861b-c53a-4046-b329-ce593ed4be7f",
+								"id": "cadf5f69-1cc9-40b2-a3c1-3c44c224a256",
 								"type": "text/javascript",
 								"exec": [
 									"var moment = require('moment');",
 									"",
 									"var data = JSON.parse(responseBody);",
-									"",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -1261,10 +1252,10 @@
 									" }",
 									" ",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].End);",
+									"var ResponseEnddate = new Date (data[0].End);",
 									"",
 									"",
-									"pm.test(\"End time is before To date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});",
+									"pm.test(\"End time is before To date\", function () {pm.expect(ResponseEnddate).to.be.below(Enddate);});",
 									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Aleksis Sideris\");}); // This needs to be changed ",
 									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed "
 								]
@@ -1316,12 +1307,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8e082fda-6e29-42a5-bf6b-3e340e635ddb",
+								"id": "ecebaa20-458d-47f6-bea4-bc8384a5decd",
 								"type": "text/javascript",
 								"exec": [
-									"var moment = require('moment');",
-									"",
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -1337,16 +1328,15 @@
 									" }",
 									" ",
 									"var Startdate = new Date (moment.utc(\"01.01.2018\"));",
-									"var ResponceStartdate = new Date (data[0].Start);",
+									"var ResponseStartdate = new Date (data[0].Start);",
 									"var Enddate = new Date (moment.utc(\"01.02.2019\"));",
-									"var ResponceEnddate = new Date (data[0].End);",
+									"var ResponseEnddate = new Date (data[0].End);",
 									"",
 									"",
-									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponceStartdate).to.be.above(Startdate);});",
-									"pm.test(\"End time is before To date\", function () {pm.expect(ResponceEnddate).to.be.below(Enddate);});",
+									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponseStartdate).to.be.above(Startdate);});",
+									"pm.test(\"End time is before To date\", function () {pm.expect(ResponseEnddate).to.be.below(Enddate);});",
 									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Aleksis Sideris\");}); // This needs to be changed ",
-									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed ",
-									""
+									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed "
 								]
 							}
 						}
@@ -1400,7 +1390,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "199aaee7-d8fc-4149-aa53-3af67b6fee5d",
+								"id": "2f943684-91ab-4700-a184-4f5995308bcd",
 								"type": "text/javascript",
 								"exec": [
 									"var AppData = JSON.parse(responseBody);",
@@ -1422,18 +1412,14 @@
 									"var Start = moment('2019-01-01T21:35:43.527Z').toISOString();",
 									"var End = moment(Start).add(30, 'minute').toISOString();",
 									"",
-									"console.info(Start);",
-									"",
-									"pm.test(\"Has Id\", function() { pm.expect(AppData).to.have.property('Id');});",
-									"pm.test(\"Has PatientId\", function() { pm.expect(AppData).to.have.property('PatientId');});",
-									"pm.test(\"Has PatientName\", function() { pm.expect(AppData).to.have.property('PatientName');});",
-									"pm.test(\"Has Start\", function() { pm.expect(AppData).to.have.property('Start');});",
-									"pm.test(\"Has End\", function() { pm.expect(AppData).to.have.property('End');});",
-									"pm.test(\"Has OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId');});",
-									"pm.test(\"Has OwnerName\", function() { pm.expect(AppData).to.have.property('OwnerName');});",
-									"pm.test(\"Has CreatorId\", function() { pm.expect(AppData).to.have.property('CreatorId');});",
-									"pm.test(\"Has correct Start time\", function () { pm.expect(AppData).to.have.property('Start' , Start);});",
-									"pm.test(\"Has correct End time\", function () { pm.expect(AppData).to.have.property('End' , End);});"
+									"pm.test(\"Created First appointment has property Id in response body\", function() { pm.expect(AppData).to.have.property('Id');});",
+									"pm.test(\"Created First appointment has property PatientName in response body\", function() { pm.expect(AppData).to.have.property('PatientName');});",
+									"pm.test(\"Created First appointment has property OwnerId in response body\", function() { pm.expect(AppData).to.have.property('OwnerId');});",
+									"pm.test(\"Created First appointment has property OwnerName in response body\", function() { pm.expect(AppData).to.have.property('OwnerName');});",
+									"pm.test(\"Created First appointment has property CreatorId in response body\", function() { pm.expect(AppData).to.have.property('CreatorId');});",
+									"pm.test(\"Created First appointment has correct property PatientId in response body\", function() { pm.expect(AppData).to.have.property('PatientId', 1);});",
+									"pm.test(\"Created First appointment has correct property Start in response body\", function () { pm.expect(AppData).to.have.property('Start', Start);});",
+									"pm.test(\"Created First appointment has correct property End in response body\", function () { pm.expect(AppData).to.have.property('End', End);});"
 								]
 							}
 						},
@@ -1488,7 +1474,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "09bbbf8e-b92d-4ce2-b797-2ff1dc62cf18",
+								"id": "46f10835-d328-415c-a152-f0baf144c064",
 								"type": "text/javascript",
 								"exec": [
 									"var moment = require('moment');",
@@ -1511,9 +1497,9 @@
 									"var Start = moment('2019-01-01T21:35:43.527Z').toISOString();",
 									"var End = moment(Start).add(30, 'minute').toISOString();",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 1);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(AppData).to.have.property('Start', Start);});",
-									"pm.test(\"Has correct End\", function() { pm.expect(AppData).to.have.property('End', End);});"
+									"pm.test(\"Created First appointment has correct property PatientId in response body\", function() { pm.expect(AppData).to.have.property('PatientId', 1);});",
+									"pm.test(\"Created First appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);});",
+									"pm.test(\"Created First appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});"
 								]
 							}
 						}
@@ -1554,10 +1540,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c93bd564-58fd-4b42-8f5a-8111d83915b0",
+								"id": "7017761d-74fe-496f-9341-d30326aa6ab2",
 								"type": "text/javascript",
 								"exec": [
 									"var AppData = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentDataId\", AppData.Id);",
 									"",
@@ -1580,10 +1568,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 2);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T07:35:43.525Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T08:35:43.525Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 140);});"
+									"var Start = moment('2019-01-01T07:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T08:35:43.525Z').toISOString();",
+									"",
+									"pm.test(\"Edited First appointment has correct property PatientId in response body\", function() { pm.expect(AppData).to.have.property('PatientId', 2);});",
+									"pm.test(\"Edited First appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);});",
+									"pm.test(\"Edited First appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});",
+									"pm.test(\"Edited First appointment has correct property OwnerId in response body\", function() { pm.expect(AppData).to.have.property('OwnerId', 140);});"
 								]
 							}
 						},
@@ -1641,10 +1632,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "48575690-1ec3-4f02-92fe-6cd2afba2a36",
+								"id": "01b3ea14-6580-4092-b734-58b462de6699",
 								"type": "text/javascript",
 								"exec": [
 									"var AppData = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -1659,10 +1652,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 2);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T07:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(data).to.have.property('End', '2019-01-01T08:35:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 140);});"
+									"var Start = moment('2019-01-01T07:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T08:35:43.525Z').toISOString();",
+									"",
+									"pm.test(\"Edited First appointment has correct property PatientId in response body\", function() { pm.expect(AppData).to.have.property('PatientId', 2);});",
+									"//pm.test(\"Edited First appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"Edited First appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});  enable once BUG 209 is fixed ",
+									"pm.test(\"Edited First appointment has correct property OwnerId in response body\", function() { pm.expect(AppData).to.have.property('OwnerId', 140);});"
 								]
 							}
 						}
@@ -1703,10 +1699,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "436132c7-4eac-4836-9306-fb8e00171a06",
+								"id": "066f82d4-abf2-4c92-9898-34429b27fb53",
 								"type": "text/javascript",
 								"exec": [
 									"var AppData = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentDataId\", AppData.Id);",
 									"",
@@ -1728,19 +1726,21 @@
 									" tests[\"Content-Type is application/json\"] =",
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
+									" ",
+									"var Start = moment('2019-01-01T09:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T11:35:43.525Z').toISOString(); ",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 3);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T09:35:43.525Z');});",
-									"pm.test(\"Has correct Endt\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T11:35:43.525Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});",
-									""
+									"pm.test(\"Edited First appointment has correct property PatientId in response body\", function() { pm.expect(AppData).to.have.property('PatientId', 3);});",
+									"pm.test(\"Edited First appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);});",
+									"pm.test(\"Edited First appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});",
+									"pm.test(\"Edited First appointment has correct property OwnerId in response body\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
 								]
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "ebb8a678-a996-48a6-b0ff-e6d6c93232d4",
+								"id": "cb13bdfd-6f2f-4227-bcd4-da57b5bb8e2e",
 								"type": "text/javascript",
 								"exec": [
 									"/*",
@@ -1791,10 +1791,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "31c9d1cd-6266-4a2a-911e-74102884535b",
+								"id": "1cbedaaa-cc32-4a4e-8af5-ea860967ae34",
 								"type": "text/javascript",
 								"exec": [
 									"var AppData = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -1809,10 +1811,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 3);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T07:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(data).to.have.property('End', '2019-01-01T08:35:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-01T09:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T11:35:43.525Z').toISOString(); ",
+									"",
+									"pm.test(\"Edited First appointment has correct property PatientId in response body\", function() { pm.expect(AppData).to.have.property('PatientId', 3);});",
+									"//pm.test(\"Edited First appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"Edited First appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});  enable once BUG 209 is fixed ",
+									"pm.test(\"Edited First appointment has correct property OwnerId in response body\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
 								]
 							}
 						}
@@ -1853,10 +1858,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b21cddf1-dbf6-48bf-b5e0-e33e22240eda",
+								"id": "1e69d8e0-59e6-4a73-9600-8c37d0596d12",
 								"type": "text/javascript",
 								"exec": [
 									"var AppData = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentDataId\", AppData.Id);",
 									"",
@@ -1878,11 +1885,14 @@
 									" tests[\"Content-Type is application/json\"] =",
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
+									" ",
+									"var Start = moment('2019-01-01T13:35:43.525Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString(); ",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 4);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
+									"pm.test(\"Edited First appointment has correct property PatientId in response body\", function() { pm.expect(AppData).to.have.property('PatientId', 4);});",
+									"pm.test(\"Edited First appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);});",
+									"pm.test(\"Edited First appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});",
+									"pm.test(\"Edited First appointment has correct property OwnerId in response body\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
 								]
 							}
 						},
@@ -1937,10 +1947,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "30d74cf5-05fe-4ae4-a781-6fd4f16cd426",
+								"id": "b2447018-efb3-457b-9fe0-91635accaf3c",
 								"type": "text/javascript",
 								"exec": [
 									"var AppData = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -1955,10 +1967,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(AppData).to.have.property('PatientId', 4);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-01T13:35:43.525Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString(); ",
+									"",
+									"pm.test(\"Edited First appointment has correct property PatientId in response body\", function() { pm.expect(AppData).to.have.property('PatientId', 4);});",
+									"//pm.test(\"Edited First appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"Edited First appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});  enable once BUG 209 is fixed ",
+									"pm.test(\"Edited First appointment has correct property OwnerId in response body\", function() { pm.expect(AppData).to.have.property('OwnerId', 155);});"
 								]
 							}
 						}
@@ -1999,10 +2014,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c5aad4de-f086-44b9-bda3-da2d414a568c",
+								"id": "ba3bce38-f48a-492e-a991-42641c43d778",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentId\", data.Id);",
 									"",
@@ -2026,10 +2043,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 1);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-02T11:35:43.527Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-02T12:05:43.527Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-02T11:35:43.527Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString();",
+									"",
+									"pm.test(\"Created Second appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 1);});",
+									"pm.test(\"Created Second appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"pm.test(\"Created Second appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Created Second appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						},
@@ -2084,10 +2104,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "06f3c1ef-ea83-436b-bb0d-9afeda0c677c",
+								"id": "e55348b4-4c86-4e38-b03c-8a00db90ffdc",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
+									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -2102,10 +2124,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data1).to.have.property('PatientId', 1);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data1).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-02T11:35:43.527Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString();",
+									"",
+									"pm.test(\"Created Second appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 1);});",
+									"//pm.test(\"Created Second appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"Created Second appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});  enable once BUG 209 is fixed ",
+									"pm.test(\"Created Second appointment has correct property OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						}
@@ -2146,10 +2171,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cf834e16-907a-4ed4-a882-b3c050c66c73",
+								"id": "392af13d-3e16-464e-9d71-7d653b558747",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -2157,7 +2182,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Time slot is already taken\");",
+									"    pm.expect(data.Message).to.eql(\"Time slot is already taken\");",
 									"});"
 								]
 							}
@@ -2268,10 +2293,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "20826c07-2105-4620-9a02-4201ce432c0f",
+								"id": "145fd07a-96d7-4734-a559-1483c9a4249e",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentId\", data.Id);",
 									"",
@@ -2294,11 +2321,14 @@
 									" tests[\"Content-Type is application/json\"] =",
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
+									" ",
+									"var Start = moment('2019-01-01T19:35:43.527Z').toISOString();",
+									"var End = moment('2019-01-01T20:35:43.527Z').toISOString();",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 6);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T19:35:43.527Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T20:35:43.527Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"pm.test(\"Created Third appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 6);});",
+									"pm.test(\"Created Third appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"pm.test(\"Created Third appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Created Third appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						},
@@ -2354,10 +2384,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a95e7d90-58a8-4add-8737-922b64dad298",
+								"id": "e3c0dfc3-5ad9-47bd-b4de-d8858833aeed",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -2371,11 +2403,14 @@
 									" tests[\"Content-Type is application/json\"] =",
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
+									" ",
+									"var Start = moment('2019-01-01T19:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T20:35:43.525Z').toISOString(); ",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 6);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"pm.test(\"Created Third appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 6);});",
+									"//pm.test(\"Created Third appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"Created Third appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});  enable once BUG 209 is fixed ",
+									"pm.test(\"Created Third appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						}
@@ -2416,10 +2451,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8d3b0570-8acb-48d8-bd60-9acb8405ba3e",
+								"id": "fa789537-0d0f-44d9-9242-3e405e6d0650",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentId\", data.Id);",
 									"",
@@ -2443,10 +2480,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 7);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T11:35:43.525Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T12:15:43.525Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
+									"var Start = moment('2019-01-01T11:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T12:15:43.525Z').toISOString(); ",
+									"",
+									"pm.test(\"Created Third appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 7);});",
+									"pm.test(\"Created Third appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"pm.test(\"Created Third appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Created Third appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
 								]
 							}
 						},
@@ -2504,10 +2544,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bdff834a-d4c9-4964-be55-8aa06fff61a9",
+								"id": "4d776b07-0a32-448f-a92d-88b66a832bb1",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -2522,10 +2564,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 7);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
+									"var Start = moment('2019-01-01T11:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T12:15:43.525Z').toISOString(); ",
+									"",
+									"pm.test(\"Created Third appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 7);});",
+									"//pm.test(\"Created Third appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"Created Third appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});  enable once BUG 209 is fixed ",
+									"pm.test(\"Created Third appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
 								]
 							}
 						}
@@ -2566,10 +2611,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d4046077-a3de-4fb2-ab17-7a50fb23fa78",
+								"id": "2a602afe-1ceb-4e00-84fb-d3f8e81b6788",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentId\", data.Id);",
 									"",
@@ -2593,10 +2640,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 8);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T15:35:43.525Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T16:05:43.525Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-01T15:35:43.525Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString(); ",
+									"",
+									"pm.test(\"Created Third appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 8);});",
+									"pm.test(\"Created Third appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"pm.test(\"Created Third appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Created Third appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						},
@@ -2651,10 +2701,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "77b46ca0-d162-44eb-b0ae-d82cd27e43ef",
+								"id": "c4f34159-6e04-424a-913f-44c9ea033841",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -2669,10 +2721,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 8);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-01T15:35:43.525Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString(); ",
+									"",
+									"pm.test(\"Created Third appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 8);});",
+									"//pm.test(\"Created Third appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"Created Third appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});  enable once BUG 209 is fixed ",
+									"pm.test(\"Created Third appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						}
@@ -2713,10 +2768,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1d99cd1d-8d0e-4a0d-b624-e466a590b800",
+								"id": "a7ea45b3-8fe6-4d92-bdb0-5a7a33bba48d",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentId\", data.Id);",
 									"",
@@ -2739,10 +2796,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 9);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T17:35:43.525Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T18:35:43.525Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-01T17:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T18:35:43.525Z').toISOString(); ",
+									"",
+									"pm.test(\"Created Third appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 9);});",
+									"pm.test(\"Created Third appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"pm.test(\"Created Third appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Created Third appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						},
@@ -2800,10 +2860,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4ac623bd-0933-468a-85a9-2322cd3e36f0",
+								"id": "a10edc67-ad8e-47c3-864d-c21ce03c8c27",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -2817,10 +2879,13 @@
 									" tests[\"Content-Type is application/json\"] =",
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
+									" ",
+									"var Start = moment('2019-01-01T17:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T18:35:43.525Z').toISOString();  ",
 									"",
 									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 9);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
+									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', End);});  enable once BUG 209 is fixed ",
 									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
@@ -2917,10 +2982,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "654b3340-69a7-4213-8b1b-c0c9e3740634",
+								"id": "c7f3cb4f-e291-490c-912d-b4555f7dab40",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentId\", data.Id);",
 									"",
@@ -2942,11 +3009,14 @@
 									" tests[\"Content-Type is application/json\"] =",
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
+									" ",
+									"var Start = moment('2019-01-01T04:35:43.527Z').toISOString();",
+									"var End = moment('2019-01-01T05:35:43.527Z').toISOString(); ",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 14);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T04:35:43.527Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T05:35:43.527Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 1);});"
+									"pm.test(\"Created Fourth appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 14);});",
+									"pm.test(\"Created Fourth appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"pm.test(\"Created Fourth appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Created Fourth appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 1);});"
 								]
 							}
 						},
@@ -3002,10 +3072,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "caf49ce9-38c7-4c32-b5e0-cc92548912b6",
+								"id": "34762e5e-3260-477c-9e6b-956e0afc48cf",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -3020,10 +3092,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 14);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 1);});"
+									"var Start = moment('2019-01-01T04:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T05:35:43.525Z').toISOString(); ",
+									"",
+									"pm.test(\"Created Fourth appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 14);});",
+									"//pm.test(\"Created Fourth appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"Created Fourth appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});  enable once BUG 209 is fixed ",
+									"pm.test(\"Created Fourth appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 1);});"
 								]
 							}
 						}
@@ -3064,10 +3139,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7ce95bb9-e08e-44ed-ac73-2ab2f013729b",
+								"id": "2e357fac-9440-4a23-bdff-a0287086438c",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentId\", data.Id);",
 									"",
@@ -3090,10 +3167,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 15);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T12:35:43.525Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T13:05:43.525Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-01T12:35:43.525Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString();",
+									"",
+									"pm.test(\"Edited Fourth appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 15);});",
+									"pm.test(\"Edited Fourth appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"pm.test(\"Edited Fourth appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Edited Fourth appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						},
@@ -3148,10 +3228,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2be9847e-bd0d-419d-b15f-18dfa8fb15df",
+								"id": "8718a4aa-e9a8-4797-b3ce-4effbcea5f97",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -3166,10 +3248,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 15);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-01T12:35:43.525Z').toISOString();",
+									"var End = moment(Start).add(30, 'minute').toISOString();",
+									"",
+									"pm.test(\"Edited Fourth appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 15);});",
+									"//pm.test(\"Edited Fourth appointment has correct property Start in response body\", function() { pm.expect(AppData).to.have.property('Start', Start);}); enable once BUG 209 is fixed ",
+									"//pm.test(\"Edited Fourth appointment has correct property End in response body\", function() { pm.expect(AppData).to.have.property('End', End);});  enable once BUG 209 is fixed ",
+									"pm.test(\"Edited Fourth appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						}
@@ -3210,10 +3295,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e332d5c5-14f1-4b38-835a-b8f9d9298e91",
+								"id": "0784190a-2c24-409b-b2cb-39afb0acdecc",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentId\", data.Id);",
 									"",
@@ -3236,10 +3323,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 16);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T15:35:43.525Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T17:35:43.525Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"var Start = moment('2019-01-01T15:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T17:35:43.525Z').toISOString(); ",
+									"",
+									"pm.test(\"Edited Fourth appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 16);});",
+									"pm.test(\"Edited Fourth appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"pm.test(\"Edited Fourth appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Edited Fourth appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						},
@@ -3297,10 +3387,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f73207b4-7235-4db7-b8c0-97c76473191a",
+								"id": "99b4cf31-7f91-4752-96b2-faa5c01e32c0",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -3314,11 +3406,14 @@
 									" tests[\"Content-Type is application/json\"] =",
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
+									" ",
+									"var Start = moment('2019-01-01T15:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T17:35:43.525Z').toISOString();  ",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 16);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
+									"pm.test(\"Edited Fourth appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 16);});",
+									"//pm.test(\"Edited Fourth appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"//pm.test(\"Edited Fourth appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Edited Fourth appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 155);});"
 								]
 							}
 						}
@@ -3359,10 +3454,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ecac4dae-67a0-4831-aed5-82e8d8f910f9",
+								"id": "98082ad9-f2e8-45e9-aea0-1e45e01e06d0",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"postman.setGlobalVariable(\"AppointmentId\", data.Id);",
 									"",
@@ -3385,10 +3482,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 17);});",
-									"pm.test(\"Has correct Start\", function() { pm.expect(data).to.have.property('Start', '2019-01-01T22:35:43.525Z');});",
-									"pm.test(\"Has correct End\", function() { pm.expect(data).to.have.property('End', '2019-01-01T23:15:43.525Z');});",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
+									"var Start = moment('2019-01-01T22:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T23:15:43.525Z').toISOString();  ",
+									"",
+									"pm.test(\"Edited Fourth appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 17);});",
+									"pm.test(\"Edited Fourth appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"pm.test(\"Edited Fourth appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Edited Fourth appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
 								]
 							}
 						},
@@ -3446,10 +3546,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7afa6497-cc19-46be-a28d-9f30418872ba",
+								"id": "48fc4b1b-fc5d-4182-acfe-465378c94fe5",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -3464,10 +3566,13 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									"",
-									"pm.test(\"Has correct PatientId\", function() { pm.expect(data).to.have.property('PatientId', 17);});",
-									"//pm.test(\"Start is correct\", function() { pm.expect(AppData).to.have.property('Start', '2019-01-01T13:35:43.525Z');}); enable once BUG 209 is fixed ",
-									"//pm.test(\"End is correct\", function() { pm.expect(AppData).to.have.property('End', '2019-01-01T14:05:43.525Z');});  enable once BUG 209 is fixed ",
-									"pm.test(\"Has correct OwnerId\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
+									"var Start = moment('2019-01-01T22:35:43.525Z').toISOString();",
+									"var End = moment('2019-01-01T23:15:43.525Z').toISOString();  ",
+									"",
+									"pm.test(\"Edited Fourth appointment has correct property PatientId in response body\", function() { pm.expect(data).to.have.property('PatientId', 17);});",
+									"//pm.test(\"Edited Fourth appointment has correct property Start in response body\", function() { pm.expect(data).to.have.property('Start', Start);});",
+									"//pm.test(\"Edited Fourth appointment has correct property End in response body\", function() { pm.expect(data).to.have.property('End', End);});",
+									"pm.test(\"Edited Fourth appointment has correct property OwnerId in response body\", function() { pm.expect(data).to.have.property('OwnerId', 130);});"
 								]
 							}
 						}
@@ -3563,11 +3668,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3653e78f-cb30-432f-939e-5402f247e1fc",
+								"id": "9ac7e824-97f7-4d47-9b3a-defb679f377b",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -3575,7 +3679,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"EndTime cannot be less than StartTime\");",
+									"    pm.expect(data.Message).to.eql(\"EndTime cannot be less than StartTime\");",
 									"});"
 								]
 							}
@@ -3632,11 +3736,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7eca7321-520b-429e-9c35-eb8c4e9ba533",
+								"id": "5419021f-bf0f-4852-82b0-ba45afc134b8",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -3644,7 +3747,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"EndTime cannot be less than StartTime\");",
+									"    pm.expect(data.Message).to.eql(\"EndTime cannot be less than StartTime\");",
 									"});"
 								]
 							}
@@ -3703,11 +3806,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "02a58b0c-6592-417a-8b51-aa9c58cdb1ed",
+								"id": "3959337e-ee7f-44a2-886f-0fd3931a0e22",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -3715,7 +3817,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Start and EndTime cannot be equal\");",
+									"    pm.expect(data.Message).to.eql(\"Start and EndTime cannot be equal\");",
 									"});"
 								]
 							}
@@ -3774,11 +3876,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8001cdd3-91f8-4beb-8e2a-00bfe55c20b3",
+								"id": "b16ce15f-25d8-4443-aa0d-13b1f8cc1a73",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -3786,7 +3887,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Appointments in the past cannot be created\");",
+									"    pm.expect(data.Message).to.eql(\"Appointments in the past cannot be created\");",
 									"});"
 								]
 							}
@@ -3842,11 +3943,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ce0229da-8507-4c36-adf2-54dcd270f7df",
+								"id": "7a2dd9cf-584d-4a2d-a269-c333bd228067",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -3854,7 +3954,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Provided apppointment ownerId is not valid user\");",
+									"    pm.expect(data.Message).to.eql(\"Provided apppointment ownerId is not valid user\");",
 									"});"
 								]
 							}
@@ -3913,15 +4013,16 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "19f73d0e-3c96-4372-a71e-998b5ff14aca",
+								"id": "2ba690ed-4b8f-4a18-9bac-6600cba6986b",
 								"type": "text/javascript",
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
 									"});",
 									"",
-									"",
-									"pm.test(\"Status code name has string\", function () {pm.response.to.have.status(\"Bad Request\");});"
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});"
 								]
 							}
 						},
@@ -3971,16 +4072,19 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3acce912-3ef3-408e-bae6-3b52a2afafa4",
+								"id": "b21bc32f-c7f2-4967-be61-b3c92b005e3f",
 								"type": "text/javascript",
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
 									"});",
 									"",
-									"",
-									"pm.test(\"Status code name has string\", function () {pm.response.to.have.status(\"Bad Request\");});",
-									"pm.test(\"Body matches string\", function () {pm.expect(pm.response.text()).to.include(\"Appointment with Id: -1 was not found\");});"
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Appointment with Id: -1 was not found\");",
+									"});"
 								]
 							}
 						},
@@ -4030,13 +4134,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7bbdc572-3f88-447c-84ae-e00175af4a60",
+								"id": "bdc3f8d3-1a51-478d-a865-1505de389127",
 								"type": "text/javascript",
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
 									"});",
-									"",
 									"",
 									"pm.test(\"Status code name has string\", function () {",
 									"    pm.response.to.have.status(\"Bad Request\");",
@@ -4146,11 +4249,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bf31f39f-0c94-4151-b8b0-f9e915cb6ac0",
+								"id": "7deb5574-20a7-4172-a97d-7115b078a92d",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -4158,7 +4260,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Authorization has been denied for this request.\");",
+									"    pm.expect(data.Message).to.eql(\"Authorization has been denied for this request.\");",
 									"});"
 								]
 							}
@@ -4215,11 +4317,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "43f4b32a-5427-44b7-89da-ac4def469002",
+								"id": "ca15dbae-b514-4678-8e2b-49ec676c4c9e",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -4227,7 +4328,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Authorization has been denied for this request.\");",
+									"    pm.expect(data.Message).to.eql(\"Authorization has been denied for this request.\");",
 									"});"
 								]
 							}
@@ -4287,11 +4388,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d75357ed-d521-413d-a1ae-ee9cb9a930a8",
+								"id": "c0b694c2-db02-460b-b7f3-c59834ffb624",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -4299,7 +4399,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Authorization has been denied for this request.\");",
+									"    pm.expect(data.Message).to.eql(\"Authorization has been denied for this request.\");",
 									"});"
 								]
 							}
@@ -4342,11 +4442,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d31be09e-5e11-4157-927a-846d651f910c",
+								"id": "24f33e07-d408-45d3-a7b0-1b2cd2fc7e2b",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -4354,7 +4453,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Authorization has been denied for this request.\");",
+									"    pm.expect(data.Message).to.eql(\"Authorization has been denied for this request.\");",
 									"});"
 								]
 							}
@@ -4406,11 +4505,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "13a854a2-aae2-43b4-a8fd-5e8c63c6776c",
+								"id": "04ad46bf-da41-4503-933d-030d9c836d38",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -4418,7 +4516,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Authorization has been denied for this request.\");",
+									"    pm.expect(data.Message).to.eql(\"Authorization has been denied for this request.\");",
 									"});"
 								]
 							}
@@ -4471,11 +4569,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1908aaf0-e2be-4bed-9a08-79ab14640402",
+								"id": "3c7c0491-ef19-4690-8240-33fd1116b92a",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
-									"",
+									"var data = JSON.parse(responseBody);",
 									"",
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -4483,7 +4580,7 @@
 									"",
 									"pm.test(\"Responce body is correct\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(data1.Message).to.eql(\"Authorization has been denied for this request.\");",
+									"    pm.expect(data.Message).to.eql(\"Authorization has been denied for this request.\");",
 									"});"
 								]
 							}
@@ -4528,12 +4625,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6b382473-6251-42ba-8d59-5d419060e49b",
+								"id": "ea581d51-1c30-40ba-a623-fd2aa1ec0898",
 								"type": "text/javascript",
 								"exec": [
-									"var data1 = JSON.parse(responseBody);",
+									"var data = JSON.parse(responseBody);",
 									"",
-									"postman.setGlobalVariable(\"invalid token\", data1);",
+									"postman.setGlobalVariable(\"invalid token\", data);",
 									"",
 									"pm.test(\"Status code is 500\", function () {",
 									"    pm.response.to.have.status(500);",
