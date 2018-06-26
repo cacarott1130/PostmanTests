@@ -271,12 +271,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ccda74c8-5490-4354-86be-3485e152340d",
+								"id": "aac5ee86-7992-4ace-9d7b-37b733ebbcd9",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
 									"",
 									"postman.setGlobalVariable(\"DoctorID\", data[0].Id);",
+									"postman.setGlobalVariable(\"FirstDoctorName\", data[0].Name);",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -1089,7 +1090,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "db820a58-2efa-417b-be3c-6ecfc6e06c94",
+								"id": "a3c6bea0-487a-4928-a821-6c6df55bfbc4",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
@@ -1108,7 +1109,7 @@
 									" responseHeaders[\"Content-Type\"].has(\"application/json\");",
 									" }",
 									" ",
-									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Aleksis Sideris\");}); // This needs to be changed ",
+									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include((globals.FirstDoctorName));}); // This needs to be changed ",
 									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed "
 								]
 							}
@@ -1155,7 +1156,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "73860b55-31e5-432d-a488-cd81977c40bf",
+								"id": "4643ef4c-362b-45f9-8f16-a8e0e7bdc006",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
@@ -1180,7 +1181,7 @@
 									"",
 									"",
 									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponseStartdate).to.be.above(Startdate);});",
-									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Aleksis Sideris\");}); // This needs to be changed ",
+									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(globals.FirstDoctorName);}); // This needs to be changed ",
 									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed "
 								]
 							}
@@ -1231,7 +1232,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cadf5f69-1cc9-40b2-a3c1-3c44c224a256",
+								"id": "74f25647-d1d8-4fdb-8360-c6c7b12898bd",
 								"type": "text/javascript",
 								"exec": [
 									"var moment = require('moment');",
@@ -1256,7 +1257,7 @@
 									"",
 									"",
 									"pm.test(\"End time is before To date\", function () {pm.expect(ResponseEnddate).to.be.below(Enddate);});",
-									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Aleksis Sideris\");}); // This needs to be changed ",
+									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(globals.FirstDoctorName);}); // This needs to be changed ",
 									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed "
 								]
 							}
@@ -1307,7 +1308,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ecebaa20-458d-47f6-bea4-bc8384a5decd",
+								"id": "e72344b7-c3e0-4db6-925b-9c0a390974a0",
 								"type": "text/javascript",
 								"exec": [
 									"var data = JSON.parse(responseBody);",
@@ -1335,7 +1336,7 @@
 									"",
 									"pm.test(\"Start time is after From date\", function () {pm.expect(ResponseStartdate).to.be.above(Startdate);});",
 									"pm.test(\"End time is before To date\", function () {pm.expect(ResponseEnddate).to.be.below(Enddate);});",
-									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Aleksis Sideris\");}); // This needs to be changed ",
+									"pm.test(\"First doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(globals.FirstDoctorName);}); // This needs to be changed ",
 									"pm.test(\"Second doctor has the correct OwnerName\", function () {pm.expect(pm.response.text()).to.include(\"Neiko4 Neikov4\");});  // This needs to be changed "
 								]
 							}
@@ -1453,7 +1454,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"PatientId\": 1,\n\t\"Start\": \"2019-01-01T21:35:43.525Z\"\n}"
+							"raw": "{\n  \"PatientId\": 1,\n  \"Start\": \"2019-01-01T21:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -2363,7 +2364,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"PatientId\" : 6,\n\t\"Start\": \"2019-01-01T19:35:43.525Z\",\n\t\"End\": \"2019-01-01T20:35:43.525Z\"\n}"
+							"raw": "{\n  \"PatientId\" : 6,\n  \"Start\": \"2019-01-01T19:35:43.525Z\",\n  \"End\": \"2019-01-01T20:35:43.525Z\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -3051,7 +3052,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"PatientId\" : 14,\n\t\"Start\": \"2019-01-01T04:35:43.525Z\",\n\t\"End\": \"2019-01-01T05:35:43.525Z\",\n\t\"OwnerId\": 1\n}"
+							"raw": "{\n  \"PatientId\" : 14,\n  \"Start\": \"2019-01-01T04:35:43.525Z\",\n  \"End\": \"2019-01-01T05:35:43.525Z\",\n  \"OwnerId\": 1\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4228,7 +4229,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\t\n\t\"Id\": \"{{AppointmentDataId}}\",\n\t\"PatientId\": \"{{PatientDataId}}\",\n\t\"Start\": \"2019-01-01T13:35:43.525Z\",\n\t\"OwnerId\": \"{{OwnerDataId}}\"\n}"
+							"raw": "{  \n  \"Id\": \"{{AppointmentDataId}}\",\n  \"PatientId\": \"{{PatientDataId}}\",\n  \"Start\": \"2019-01-01T13:35:43.525Z\",\n  \"OwnerId\": \"{{OwnerDataId}}\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/appointments",
@@ -4548,7 +4549,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"FirstName\" : \"Test\",\n\t\"LastName\": \"Testov\",\n\t\"Email\": \"testmail{{uniqueID}}@mytestemail.com\",\n\t\"Address\": {\n\t\t\"Country\": \"USA\",\n\t\t\"City\": \"Los Angeles\",\n\t\t\"Street\": \"Test Street 123\"\n\t}\n}"
+							"raw": "{\n  \"FirstName\" : \"Test\",\n  \"LastName\": \"Testov\",\n  \"Email\": \"testmail{{uniqueID}}@mytestemail.com\",\n  \"Address\": {\n    \"Country\": \"USA\",\n    \"City\": \"Los Angeles\",\n    \"Street\": \"Test Street 123\"\n  }\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/patients",
@@ -4658,7 +4659,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Username\": \"Adminadmadmin12345\",\n\t\"Password\": \"Adminadmadmin12345\"\n}"
+							"raw": "{\n  \"Username\": \"Adminadmadmin12345\",\n  \"Password\": \"Adminadmadmin12345\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/users/auth",
