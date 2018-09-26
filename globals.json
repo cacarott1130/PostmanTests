@@ -1,0 +1,14 @@
+{
+  "id": "8fba9238-7312-4897-80af-4748665fb0ff",
+  "values": [
+    {
+      "key": "url",
+      "value": "http://aspcapi.azurewebsites.net/",
+      "enabled": true
+    }
+  ],
+  "name": "My Workspace Globals",
+  "_postman_variable_scope": "globals",
+  "_postman_exported_at": "2018-09-26T13:35:06.028Z",
+  "_postman_exported_using": "Postman/6.3.0"
+}
