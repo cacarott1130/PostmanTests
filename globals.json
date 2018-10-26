@@ -1,0 +1,19 @@
+{
+	"id": "8fba9238-7312-4897-80af-4748665fb0ff",
+	"values": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbSIsInJvbGUiOlsiRG9jdG9yIiwiT2ZmaWNlTWFuYWdlciJdLCJuYW1laWQiOiIxNTUiLCJuYmYiOjE1NDA1NDQwNjQsImV4cCI6MTU0MDU0NzY2NCwiaWF0IjoxNTQwNTQ0MDY0LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUzNTQ1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MzU0NSJ9.7juLKWpxX1tIrXHPTOZ5CURzgURvczxiwD_ST7t6Bmw",
+			"enabled": false
+		},
+		{
+			"key": "url",
+			"value": "http://aspcapi.azurewebsites.net/",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2018-10-26T09:28:58.414Z",
+	"_postman_exported_using": "Postman/6.4.4"
+}

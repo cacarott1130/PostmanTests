@@ -1,0 +1,507 @@
+{
+	"info": {
+		"_postman_id": "7e6d2fd2-b205-4dbe-888e-6912d6debfc2",
+		"name": "DEMO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "123",
+			"item": [
+				{
+					"name": "Authenticate Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "801766fe-d5a0-4c13-86f4-fb2a3999b4a3",
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"",
+									"postman.setGlobalVariable(\"token\", data);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response has body\", function() {",
+									"",
+									"pm.expect(data).to.have.property('length');",
+									"",
+									"});",
+									"",
+									"//Here we can set the request order",
+									"//postman.setNextRequest(\"Delete First Appointment\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Username\": \"adm\",\n\t\"Password\": \"adm\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/users/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create First Appointment Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5f62896-3423-4bee-8b0d-169a4f91b7c8",
+								"exec": [
+									"var AppData = JSON.parse(responseBody);",
+									"",
+									"var moment = require('moment');",
+									"",
+									"postman.setGlobalVariable(\"AppointmentId\", AppData.Id);",
+									"",
+									"postman.setGlobalVariable(\"PatientId\", AppData.PatientId);",
+									"",
+									"postman.setGlobalVariable(\"AppointmentStart\", AppData.Start);",
+									"",
+									"postman.setGlobalVariable(\"OwnerId\", AppData.OwnerId);",
+									"",
+									"",
+									"//pm.globals.get(\"AppointmentStart\") just gets the value of the global variable we set above. ",
+									"var End = moment(pm.globals.get(\"AppointmentStart\")).add(30, 'minute').toISOString();",
+									"",
+									"",
+									"pm.test(\"Start time is correct\", function () { pm.expect(AppData).to.have.property('Start', (pm.globals.get(\"AppointmentStart\")));});",
+									"pm.test(\"End time is correct\", function () { pm.expect(AppData).to.have.property('End', End);});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f211b813-b210-45fa-8827-27aca7c59ddc",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"PatientId\": 1,\n  \"Start\": \"2019-01-01T21:35:43.525Z\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/appointments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete First Appointment Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7fdbf6da-0d66-4061-b58a-d474cef8b33b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.globals.unset(\"token\");",
+									"pm.globals.unset(\"AppointmentId\");",
+									"pm.globals.unset(\"AppointmentStart\");",
+									"pm.globals.unset(\"OwnerId\");",
+									"pm.globals.unset(\"PatientId\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ae25118d-c201-4194-9902-88db4bc24dbb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\": \"{{PatientId}}\",\n  \"Start\": \"{{AppointmentStart}}\",\n  \"OwnerId\": \"{{OwnerId}}\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/appointments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authenticate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "801766fe-d5a0-4c13-86f4-fb2a3999b4a3",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"",
+							"postman.setGlobalVariable(\"token\", data);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response has body\", function() {",
+							"",
+							"pm.expect(data).to.have.property('length');",
+							"",
+							"});",
+							"",
+							"//Here we can set the request order",
+							"//postman.setNextRequest(\"Delete First Appointment\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Username\": \"adm\",\n\t\"Password\": \"adm\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/users/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create First Appointment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d5f62896-3423-4bee-8b0d-169a4f91b7c8",
+						"exec": [
+							"var AppData = JSON.parse(responseBody);",
+							"",
+							"var moment = require('moment');",
+							"",
+							"postman.setGlobalVariable(\"AppointmentId\", AppData.Id);",
+							"",
+							"postman.setGlobalVariable(\"PatientId\", AppData.PatientId);",
+							"",
+							"postman.setGlobalVariable(\"AppointmentStart\", AppData.Start);",
+							"",
+							"postman.setGlobalVariable(\"OwnerId\", AppData.OwnerId);",
+							"",
+							"",
+							"//pm.globals.get(\"AppointmentStart\") just gets the value of the global variable we set above. ",
+							"var End = moment(pm.globals.get(\"AppointmentStart\")).add(30, 'minute').toISOString();",
+							"",
+							"",
+							"pm.test(\"Start time is correct\", function () { pm.expect(AppData).to.have.property('Start', (pm.globals.get(\"AppointmentStart\")));});",
+							"pm.test(\"End time is correct\", function () { pm.expect(AppData).to.have.property('End', End);});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f211b813-b210-45fa-8827-27aca7c59ddc",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"PatientId\": 1,\n  \"Start\": \"2019-01-01T21:35:43.525Z\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/appointments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get First Appointment By Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a8092b2-5114-40a5-b15b-c56e539d77b3",
+						"exec": [
+							"var AppData = JSON.parse(responseBody);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//Since variables are stored as strings I am converting it her to an integer.",
+							"var PatientIdAsNumber = parseInt(pm.globals.get(\"PatientId\"));",
+							"",
+							"",
+							"pm.test(\"Verify that PatientID is correct\", function () { pm.expect(AppData).to.have.property('PatientId', PatientIdAsNumber);});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/appointments/{{AppointmentId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"appointments",
+						"{{AppointmentId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit First Appointment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6baed514-1bb9-406b-95f6-f5f37880398f",
+						"type": "text/javascript",
+						"exec": [
+							"var AppData = JSON.parse(responseBody);",
+							"",
+							"postman.setGlobalVariable(\"AppointmentId\", AppData.Id);",
+							"",
+							"postman.setGlobalVariable(\"PatientId\", AppData.PatientId);",
+							"",
+							"postman.setGlobalVariable(\"AppointmentStart\", AppData.Start);",
+							"",
+							"postman.setGlobalVariable(\"OwnerId\", AppData.OwnerId);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "af4685c5-5f06-4b44-a4bb-d45a78dbe623",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\" : 4,\n  \"Start\": \"2019-01-01T13:35:43.525Z\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/appointments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete First Appointment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7fdbf6da-0d66-4061-b58a-d474cef8b33b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.globals.unset(\"token\");",
+							"pm.globals.unset(\"AppointmentId\");",
+							"pm.globals.unset(\"AppointmentStart\");",
+							"pm.globals.unset(\"OwnerId\");",
+							"pm.globals.unset(\"PatientId\");"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ae25118d-c201-4194-9902-88db4bc24dbb",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n  \"Id\": \"{{AppointmentId}}\",\n  \"PatientId\": \"{{PatientId}}\",\n  \"Start\": \"{{AppointmentStart}}\",\n  \"OwnerId\": \"{{OwnerId}}\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/appointments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
